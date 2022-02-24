@@ -1,0 +1,47 @@
+{
+  "display_information": {
+      "name": "Marbles"
+  },
+  "features": {
+      "app_home": {
+          "home_tab_enabled": false,
+          "messages_tab_enabled": true,
+          "messages_tab_read_only_enabled": false
+      },
+      "bot_user": {
+          "display_name": "Marbles",
+          "always_online": true
+      }
+  },
+  "oauth_config": {
+      "redirect_urls": [
+          "https://localhost:3003/callback"
+      ],
+      "scopes": {
+          "user": [
+              "im:history",
+              "mpim:history",
+              "channels:history",
+              "groups:history"
+          ],
+          "bot": [
+              "app_mentions:read",
+              "im:history",
+              "im:write",
+              "chat:write"
+          ]
+      }
+  },
+  "settings": {
+      "event_subscriptions": {
+          "request_url": "https://5470-202-78-237-48.ngrok.io/events",
+          "bot_events": [
+              "app_mention",
+              "message.im"
+          ]
+      },
+      "org_deploy_enabled": false,
+      "socket_mode_enabled": false,
+      "token_rotation_enabled": false
+  }
+}
