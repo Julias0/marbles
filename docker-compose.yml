@@ -1,0 +1,25 @@
+version: "3"
+services:
+  app:
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3003:3003"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    links:
+      - mongo
+    environment:
+      CLIENT_ID: 'CLIENT_ID'
+      CLIENT_SECRET: CLIENT_SECRET
+      PORT: 3003
+      MONGO_URL: mongodb://mongo/marbles
+  mongo:
+    image: mongo
+    volumes:
+      - ./data:/data/db
+    ports:
+      - "27017:27017"
